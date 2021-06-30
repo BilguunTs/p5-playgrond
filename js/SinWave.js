@@ -13,10 +13,9 @@ class SinWave {
     point(this.y, this.x, this.size);
   }
   _resonate() {
-    if (this.amplitude == 1) {
-      this.y = -1;
-    } else if (this.amplitude == -1) {
-      this.y = +1;
+    for (let i = 1; i <= 360; i++) {
+      let ampSin = Math.sin((i / 100) * res) * 50;
+      circle(i * size, ampSin + yAxis, size);
     }
   }
   setSize(val) {
